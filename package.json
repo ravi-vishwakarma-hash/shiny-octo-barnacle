@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:gh": "ng build --base-href /Ravi_Portfollio/",
+    "build:gh": "ng build --base-href /shiny-octo-barnacle/",
     "deploy:gh": "gh-pages -d dist/ravi-portfolio/browser"
 
   },
