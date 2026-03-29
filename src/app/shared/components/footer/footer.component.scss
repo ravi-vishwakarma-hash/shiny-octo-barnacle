@@ -1,0 +1,25 @@
+.footer {
+  padding: 0 0 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.2rem 1.3rem;
+  border-radius: 1.5rem;
+  color: var(--text-secondary);
+}
+
+p,
+span {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

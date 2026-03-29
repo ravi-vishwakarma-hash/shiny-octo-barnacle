@@ -1,0 +1,87 @@
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.9rem;
+  min-height: 100%;
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    var(--surface);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 24px 60px rgba(3, 8, 20, 0.32);
+}
+
+.project-card__accent {
+  height: 0.36rem;
+}
+
+.project-card__header span {
+  display: inline-flex;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-card__body {
+  display: grid;
+  gap: 1rem;
+  padding: 1.65rem;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.76;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tag-list span,
+.achievement-list div {
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.tag-list span {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+
+.achievement-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.achievement-list div {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}

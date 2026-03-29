@@ -1,0 +1,28 @@
+<section id="experience" class="section experience">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Experience"
+      title="A focused timeline built around backend delivery, collaboration, and product reliability."
+      description="Presented as a vertical timeline to add visual rhythm while keeping the content clean and easy to scan."
+    />
+
+    <div class="timeline">
+      @for (item of timeline; track item.company + item.period) {
+        <article class="timeline__item glass-panel" appInView>
+          <span class="timeline__dot"></span>
+          <div class="timeline__meta">
+            <span>{{ item.period }}</span>
+            <h3>{{ item.role }}</h3>
+            <strong>{{ item.company }}</strong>
+          </div>
+
+          <div class="timeline__body">
+            @for (highlight of item.highlights; track highlight) {
+              <p>{{ highlight }}</p>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

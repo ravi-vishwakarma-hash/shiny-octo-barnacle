@@ -1,0 +1,46 @@
+<header class="navbar-wrap">
+  <div class="container">
+    <nav class="navbar glass-panel pill" aria-label="Primary">
+      <a class="brand" href="#home" (click)="closeMobileMenu()">
+        <span>RV</span>
+        <div>
+          <strong>Ravi Vishwakarma</strong>
+          <small>Backend Systems</small>
+        </div>
+      </a>
+
+      <button
+        class="menu-toggle"
+        [ngClass]="{ open: mobileOpen() }"
+        type="button"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileOpen()"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+
+      <div class="nav-group" [ngClass]="{ open: mobileOpen() }">
+        <div class="nav-links">
+          @for (item of navItems; track item.id) {
+            <a
+              [href]="'#' + item.id"
+              [ngClass]="{ active: activeSection === item.id }"
+              (click)="closeMobileMenu()"
+            >
+              {{ item.label }}
+            </a>
+          }
+        </div>
+
+        <div class="nav-actions">
+          <button class="theme-switch" type="button" (click)="toggleTheme()">
+            {{ currentTheme() === 'dark' ? 'Light' : 'Dark' }}
+          </button>
+          <a class="btn btn-primary" href="/ravi-vishwakarma-resume.pdf" download>Resume</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

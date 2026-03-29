@@ -1,0 +1,21 @@
+<article class="skill-card glass-panel" appInView>
+  <div class="skill-card__head">
+    <span>{{ category.icon }}</span>
+    <h3>{{ category.title }}</h3>
+  </div>
+
+  <div class="skill-list">
+    @for (skill of category.skills; track skill.name) {
+      <div class="skill-item">
+        <div class="skill-item__meta">
+          <strong>{{ skill.name }}</strong>
+          <span>{{ skill.level }}%</span>
+        </div>
+        <div class="skill-item__bar">
+          <span [style.width.%]="skill.level"></span>
+        </div>
+        <p>{{ skill.description }}</p>
+      </div>
+    }
+  </div>
+</article>

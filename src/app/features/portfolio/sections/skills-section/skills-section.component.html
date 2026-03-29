@@ -1,0 +1,15 @@
+<section id="skills" class="section skills">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Skills"
+      title="Backend depth, data discipline, and architecture instincts that scale with product needs."
+      description="Grouped into practical categories to show both hands-on tooling and the engineering thinking behind delivery."
+    />
+
+    <div class="grid-auto-fit">
+      @for (category of categories; track category.title) {
+        <app-skill-card [category]="category" />
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<section id="home" class="hero">
+  <div #heroLayout class="container hero__layout">
+    <div #heroContent class="hero__content">
+      <span class="section-eyebrow">Backend Engineer</span>
+      <div class="hero__announcement">
+        <span>Now building</span>
+        <strong>scalable .NET systems for product teams</strong>
+      </div>
+      <h1>Ravi Vishwakarma</h1>
+      <h2>Backend Software Engineer (.NET Core)</h2>
+      <p>
+        I build scalable systems, resilient APIs, and clean backend workflows that turn complex
+        product requirements into fast, dependable software.
+      </p>
+
+      <div class="hero__typing">
+        <span>Focused on</span>
+        <strong appTypewriter [words]="words"></strong>
+        <span class="cursor"></span>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="#projects">Explore Projects</a>
+        <a class="btn btn-secondary" href="#contact">Let's Connect</a>
+      </div>
+    </div>
+
+    <aside #heroPanel class="hero__panel glass-panel">
+      <span class="hero__badge">Available for impactful backend product work</span>
+      <div class="hero__signal">
+        <div class="hero__signal-line"></div>
+        <div>
+          <strong>Production-minded engineering</strong>
+          <span>APIs, workflow systems, and data-heavy products with clean delivery.</span>
+        </div>
+      </div>
+      <div class="hero__metric">
+        @for (stat of stats; track stat.label) {
+          <div>
+            <strong>{{ stat.value }}</strong>
+            <span>{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+      <div class="hero__stack">
+        <span>.NET Core</span>
+        <span>C#</span>
+        <span>SQL Server</span>
+        <span>System Design</span>
+      </div>
+    </aside>
+  </div>
+</section>

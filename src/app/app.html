@@ -1,0 +1,41 @@
+<app-ambient-background />
+
+<div class="app-shell">
+  <app-navbar [activeSection]="activeSection()" />
+
+  <main class="page-content">
+    <app-hero-section />
+
+    @defer (on viewport) {
+      <app-about-section />
+    } @placeholder {
+      <div class="section-placeholder" aria-hidden="true"></div>
+    }
+
+    @defer (on viewport) {
+      <app-skills-section />
+    } @placeholder {
+      <div class="section-placeholder" aria-hidden="true"></div>
+    }
+
+    @defer (on viewport) {
+      <app-projects-section />
+    } @placeholder {
+      <div class="section-placeholder" aria-hidden="true"></div>
+    }
+
+    @defer (on viewport) {
+      <app-experience-section />
+    } @placeholder {
+      <div class="section-placeholder" aria-hidden="true"></div>
+    }
+
+    @defer (on viewport) {
+      <app-contact-section />
+    } @placeholder {
+      <div class="section-placeholder" aria-hidden="true"></div>
+    }
+  </main>
+
+  <app-footer />
+</div>

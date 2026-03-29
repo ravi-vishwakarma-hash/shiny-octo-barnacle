@@ -1,0 +1,22 @@
+<article class="project-card glass-panel" appInView>
+  <div class="project-card__accent" [style.background]="project.accent"></div>
+  <div class="project-card__body">
+    <div class="project-card__header">
+      <span>Case Study</span>
+      <h3>{{ project.title }}</h3>
+    </div>
+    <p>{{ project.summary }}</p>
+
+    <div class="tag-list">
+      @for (tech of project.techStack; track tech) {
+        <span>{{ tech }}</span>
+      }
+    </div>
+
+    <div class="achievement-list">
+      @for (item of project.achievements; track item) {
+        <div>{{ item }}</div>
+      }
+    </div>
+  </div>
+</article>

@@ -1,0 +1,91 @@
+.section {
+  padding: 4rem 0 3rem;
+}
+
+.contact__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact__panel,
+.contact__form {
+  border-radius: 1.8rem;
+  padding: 1.5rem;
+}
+
+.contact__panel {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact__panel h3,
+.contact__note p,
+.contact__note strong {
+  margin: 0;
+}
+
+.contact__panel a {
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.contact__panel a:hover {
+  color: var(--accent);
+}
+
+.contact__note {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  background: var(--surface-muted);
+}
+
+.contact__note p {
+  margin-top: 0.55rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.contact__form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.55rem;
+}
+
+label span {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  padding: 0.95rem 1rem;
+  outline: none;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media (min-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 0.82fr 1.18fr;
+  }
+}

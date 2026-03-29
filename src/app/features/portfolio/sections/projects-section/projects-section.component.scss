@@ -1,0 +1,66 @@
+.projects__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.github-block {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1.9rem;
+}
+
+.project-block {
+  margin-bottom: 1.6rem;
+}
+
+.project-block__header,
+.github-block__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.project-block__header h3,
+.github-block__header h3 {
+  margin: 0.7rem 0 0;
+  font-size: 1.45rem;
+  letter-spacing: -0.04em;
+}
+
+.project-block__header p,
+.github-block__header p {
+  margin: 0.7rem 0 0;
+  max-width: 42rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.github-block__header a {
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.github-block__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.github-block__status {
+  padding: 1rem 0.2rem 0.2rem;
+  color: var(--text-secondary);
+}
+
+@media (min-width: 900px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .github-block__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

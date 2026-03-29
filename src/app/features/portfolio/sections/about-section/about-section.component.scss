@@ -1,0 +1,49 @@
+.about__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.about__card {
+  border-radius: 1.9rem;
+  padding: 1.7rem;
+}
+
+.about__stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.about__stats div {
+  padding: 1.15rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+strong,
+p {
+  margin: 0;
+}
+
+strong {
+  display: block;
+  font-size: 1.35rem;
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+span,
+p {
+  color: var(--text-secondary);
+  line-height: 1.82;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+@media (min-width: 900px) {
+  .about__grid {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+}

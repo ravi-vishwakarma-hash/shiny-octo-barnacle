@@ -1,0 +1,55 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Projects"
+      title="Selected backend systems with business impact, performance wins, and reusable architecture."
+      description="This section shows both static portfolio case studies and live GitHub-powered code repositories, so visitors can see impact and implementation together."
+    />
+
+    <section class="project-block">
+      <div class="project-block__header">
+        <div>
+          <span class="section-eyebrow">Static Projects</span>
+          <h3>Curated project case studies</h3>
+          <p>Handcrafted portfolio summaries with backend architecture, stack, and business results.</p>
+        </div>
+      </div>
+
+      <div class="projects__grid">
+        @for (project of staticProjects; track project.title) {
+          <app-project-card [project]="project" />
+        }
+      </div>
+    </section>
+
+    <section class="github-block glass-panel">
+      <div class="github-block__header">
+        <div>
+          <span class="section-eyebrow">GitHub API</span>
+          <h3>Live code repositories from {{ githubUsername }}</h3>
+          <p>Fetched from the GitHub API to show real public repositories, code presence, and recent activity.</p>
+        </div>
+        <a [href]="'https://github.com/' + githubUsername" target="_blank" rel="noreferrer">
+          Visit Profile
+        </a>
+      </div>
+
+      @if (githubReposState$ | async; as githubState) {
+        @if (githubState.loading) {
+          <div class="github-block__status">Loading repositories...</div>
+        } @else if (githubState.repos.length) {
+          <div class="github-block__grid">
+            @for (repo of githubState.repos; track repo.id) {
+              <app-github-repo-card [repo]="repo" />
+            }
+          </div>
+        } @else {
+          <div class="github-block__status">
+            GitHub repositories could not be loaded right now. The static project cards above are
+            still available.
+          </div>
+        }
+      }
+    </section>
+  </div>
+</section>

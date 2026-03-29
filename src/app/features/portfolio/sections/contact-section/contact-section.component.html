@@ -1,0 +1,42 @@
+<section id="contact" class="section contact">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Contact"
+      title="Let's build reliable software with clean APIs, fast data flows, and thoughtful engineering."
+      description="The form is UI-ready and can be connected to EmailJS, a .NET backend endpoint, or any transactional email service."
+    />
+
+    <div class="contact__grid">
+      <article class="contact__panel glass-panel" appInView>
+        <h3>Reach out</h3>
+        <a [href]="contactLinks.email">{{contactLinks.email}}</a>
+        <a [href]="contactLinks.linkedin" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+        <a [href]="contactLinks.github" target="_blank" rel="noreferrer">GitHub Profile</a>
+
+        <div class="contact__note">
+          <strong>Backend-first collaboration</strong>
+          <p>
+            Ideal for product teams that need maintainable APIs, performance-focused backend
+            engineering, and dependable delivery.
+          </p>
+        </div>
+      </article>
+
+      <form class="contact__form glass-panel" [formGroup]="form" appInView>
+        <label>
+          <span>Name</span>
+          <input type="text" placeholder="Your name" formControlName="name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" placeholder="you@example.com" formControlName="email">
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea rows="5" placeholder="Tell me about your project" formControlName="message"></textarea>
+        </label>
+        <button class="btn btn-primary" type="button">{{ submitLabel }}</button>
+      </form>
+    </div>
+  </div>
+</section>

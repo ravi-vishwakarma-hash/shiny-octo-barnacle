@@ -1,0 +1,32 @@
+<article class="repo-card glass-panel" appInView>
+  <div class="repo-card__top">
+    <span class="repo-card__eyebrow">GitHub Repo</span>
+    <a [href]="repo.html_url" target="_blank" rel="noreferrer">View</a>
+  </div>
+
+  <h3>{{ repo.name }}</h3>
+  <p>{{ repo.description || 'Public repository synced from GitHub API.' }}</p>
+
+  <div class="repo-card__meta">
+    @if (repo.language) {
+      <span>{{ repo.language }}</span>
+    }
+    <span>Stars {{ repo.stargazers_count }}</span>
+    <span>Forks {{ repo.forks_count }}</span>
+  </div>
+
+  @if (repo.topics?.length) {
+    <div class="repo-card__topics">
+      @for (topic of repo.topics!.slice(0, 3); track topic) {
+        <span>{{ topic }}</span>
+      }
+    </div>
+  }
+
+  <div class="repo-card__footer">
+    <span>Updated {{ repo.updated_at | date: 'MMM yyyy' }}</span>
+    @if (repo.homepage) {
+      <a [href]="repo.homepage" target="_blank" rel="noreferrer">Live</a>
+    }
+  </div>
+</article>
